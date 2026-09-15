@@ -9,5 +9,5 @@ public enum Difficulty
 
 public class GameDifficulty
 {
-    public static Difficulty Difficulty { get; set; }
+    public static Difficulty Difficulty { get; set; } = Difficulty.Easy;
 }
