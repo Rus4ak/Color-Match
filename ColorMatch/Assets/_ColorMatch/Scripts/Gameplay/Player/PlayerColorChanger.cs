@@ -36,7 +36,7 @@ public class PlayerColorChanger : MonoBehaviour
             Color startColor = _meshRenderer.material.color;
             Color randomColor = _colorPalette.colors[Random.Range(0, _colorPalette.colors.Length)];
             float time = 0f;
-            float duration = .3f;
+            float duration = .2f;
 
             while (time < duration)
             {

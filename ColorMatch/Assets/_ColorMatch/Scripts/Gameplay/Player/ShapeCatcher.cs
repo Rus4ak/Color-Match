@@ -5,15 +5,19 @@ using UnityEngine.Rendering.Universal;
 
 public class ShapeCatcher : MonoBehaviour
 {
-    [SerializeField] private Volume _volume;
+    [SerializeField] private Volume _globalVolume;
+    [SerializeField] private AudioClip _successSound;
+    [SerializeField] private AudioClip _wrongSound;
 
     private MeshRenderer _basketMeshRenderer;
     private Vignette _vignette;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
         _basketMeshRenderer = GetComponent<MeshRenderer>();
-        _volume.profile.TryGet(out _vignette);
+        _globalVolume.profile.TryGet(out _vignette);
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,11 +28,13 @@ public class ShapeCatcher : MonoBehaviour
         if (shapeColor.Color == _basketMeshRenderer.material.color)
         {
             ScoreData.Instance.ChangeScore(1);
+            _audioSource.PlayOneShot(_successSound);
             StartCoroutine(ShowCatchFeedback(Color.green));
         }
         else
         {
             ScoreData.Instance.ChangeScore(-1);
+            _audioSource.PlayOneShot(_wrongSound);
             StartCoroutine(ShowCatchFeedback(Color.red));
         }
 
