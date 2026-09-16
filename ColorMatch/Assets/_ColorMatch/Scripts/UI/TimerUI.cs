@@ -9,6 +9,8 @@ public class TimerUI : MonoBehaviour
     private void OnEnable()
     {
         _gameTimer.TimeChanged += UpdateTimerText;
+
+        UpdateTimerText();
     }
 
     private void OnDisable()

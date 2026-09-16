@@ -14,7 +14,7 @@ public class ScoreData : MonoBehaviour
     {
         if (Instance != null)
         {
-            Destroy(Instance.gameObject);
+            Destroy(gameObject);
             return;
         }
 

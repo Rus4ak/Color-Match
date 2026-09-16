@@ -44,7 +44,6 @@ public class Spawner : MonoBehaviour
     private Vector3 GetRandomPoint()
     {
         float randomX = Random.Range(-_spawnZone.size.x / 2, _spawnZone.size.x / 2);
-        float y = transform.position.y;
 
         Vector3 position = _spawnZone.transform.TransformPoint(
             new Vector3(randomX, 0f, 0f));

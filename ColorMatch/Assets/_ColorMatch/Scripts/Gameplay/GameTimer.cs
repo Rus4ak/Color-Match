@@ -26,15 +26,14 @@ public class GameTimer : MonoBehaviour
 
     private IEnumerator Countdown()
     {
-        while (true)
+        while (_remainingTime > 0)
         {
             yield return new WaitForSeconds(1);
 
             _remainingTime--;
             TimeChanged?.Invoke();
-
-            if (_remainingTime <= 0)
-                TimerEnded?.Invoke();
         }
+
+        TimerEnded?.Invoke();
     }
 }
