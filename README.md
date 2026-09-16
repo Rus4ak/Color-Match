@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/bd985217-3fc5-4f4d-bf1c-b2c1eac6c263
 
 ## Controls
 
-- A/S - Move the basket
+- Mouse / Touch - Drag the basket horizontally
 
 ## Unity Version
 
